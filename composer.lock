@@ -6691,16 +6691,16 @@
         },
         {
             "name": "gomzyakov/code-style",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gomzyakov/code-style.git",
-                "reference": "7c32738451793901372df1b97b32b807aa17593b"
+                "reference": "61f3ff800117411509ba48518b587d5b59d0a0e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gomzyakov/code-style/zipball/7c32738451793901372df1b97b32b807aa17593b",
-                "reference": "7c32738451793901372df1b97b32b807aa17593b",
+                "url": "https://api.github.com/repos/gomzyakov/code-style/zipball/61f3ff800117411509ba48518b587d5b59d0a0e2",
+                "reference": "61f3ff800117411509ba48518b587d5b59d0a0e2",
                 "shasum": ""
             },
             "require": {
@@ -6738,9 +6738,9 @@
             ],
             "support": {
                 "issues": "https://github.com/gomzyakov/code-style/issues",
-                "source": "https://github.com/gomzyakov/code-style/tree/v2.1.0"
+                "source": "https://github.com/gomzyakov/code-style/tree/v2.2.0"
             },
-            "time": "2025-10-05T14:30:46+00:00"
+            "time": "2025-11-16T07:41:03+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
