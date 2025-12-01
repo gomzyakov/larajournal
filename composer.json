@@ -9,7 +9,7 @@
         "ext-intl": "*",
         "ext-gd": "*",
         "gomzyakov/image-placeholder": "^1.0",
-        "laravel/framework": "^11.9",
+        "laravel/framework": "^12.40",
         "laravel/tinker": "^2.10.0",
         "laravel/ui": "^4.5",
         "spatie/laravel-permission": "^6.4"
