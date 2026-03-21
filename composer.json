@@ -40,8 +40,8 @@
     "scripts": {
         "phpunit": "@php ./vendor/bin/phpunit ./tests --no-coverage --color=always",
         "phpstan": "@php ./vendor/bin/phpstan analyze -c ./phpstan.neon.dist --no-progress --ansi --verbose",
-        "fix": "@php ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php",
-        "cs-check": "@php ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --dry-run --diff",
+        "fix": "@php ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --ansi --verbose --allow-unsupported-php-version=yes",
+        "cs-check": "@php ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --dry-run --diff --ansi --verbose --allow-unsupported-php-version=yes",
         "rector": "@php ./vendor/bin/rector process",
         "rector-check": "@php ./vendor/bin/rector process --dry-run",
         "test": [
