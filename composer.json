@@ -9,8 +9,8 @@
         "ext-intl": "*",
         "ext-gd": "*",
         "gomzyakov/image-placeholder": "^1.0",
-        "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.10.0",
+        "laravel/framework": "^12.0",
+        "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.5",
         "spatie/laravel-permission": "^6.4"
     },
@@ -19,9 +19,9 @@
         "friendsofphp/php-cs-fixer": "^3.53",
         "gomzyakov/code-style": "^2.1",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.0",
+        "nunomaduro/collision": "^8.6",
         "phpstan/phpstan": "^1.10",
-        "phpunit/phpunit": "^11.0.1",
+        "phpunit/phpunit": "^11.5.50",
         "rector/rector": "1.2.10",
         "spatie/laravel-ignition": "^2.5"
     },
