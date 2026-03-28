@@ -23,7 +23,7 @@
                 <td><a href="{{ route('admin.post.show', $post->id) }}">Info</a></td>
                 <td><a href="{{ route('admin.post.edit', $post->id) }}" class="text-success">Edit</a></td>
                 <td>
-                    <form action="{{ route('admin.post.delete', $post->id)}}"
+                    <form action="{{ route('admin.post.destroy', $post->id)}}"
                           method="post">
                         @csrf
                         @method('delete')

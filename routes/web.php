@@ -1,35 +1,11 @@
 <?php
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\Admin\Category\CreateController as AdminCategoryCreateController;
-use App\Http\Controllers\Admin\Category\DeleteController as AdminCategoryDeleteController;
-use App\Http\Controllers\Admin\Category\EditController as AdminCategoryEditController;
-use App\Http\Controllers\Admin\Category\IndexController as AdminCategoryIndexController;
-use App\Http\Controllers\Admin\Category\ShowController as AdminCategoryShowController;
-use App\Http\Controllers\Admin\Category\StoreController as AdminCategoryStoreController;
-use App\Http\Controllers\Admin\Category\UpdateController as AdminCategoryUpdateController;
+use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminPostController;
+use App\Http\Controllers\Admin\AdminTagController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\Main\IndexController as AdminMainIndexController;
-use App\Http\Controllers\Admin\Post\CreateController as AdminPostCreateController;
-use App\Http\Controllers\Admin\Post\DeleteController as AdminPostDeleteController;
-use App\Http\Controllers\Admin\Post\EditController as AdminPostEditController;
-use App\Http\Controllers\Admin\Post\IndexController as AdminPostIndexController;
-use App\Http\Controllers\Admin\Post\ShowController as AdminPostShowController;
-use App\Http\Controllers\Admin\Post\StoreController as AdminPostStoreController;
-use App\Http\Controllers\Admin\Post\UpdateController as AdminPostUpdateController;
-use App\Http\Controllers\Admin\Tag\CreateController as AdminTagCreateController;
-use App\Http\Controllers\Admin\Tag\DeleteController as AdminTagDeleteController;
-use App\Http\Controllers\Admin\Tag\EditController as AdminTagEditController;
-use App\Http\Controllers\Admin\Tag\IndexController as AdminTagIndexController;
-use App\Http\Controllers\Admin\Tag\ShowController as AdminTagShowController;
-use App\Http\Controllers\Admin\Tag\StoreController as AdminTagStoreController;
-use App\Http\Controllers\Admin\Tag\UpdateController as AdminTagUpdateController;
-use App\Http\Controllers\Admin\User\CreateController as AdminUserCreateController;
-use App\Http\Controllers\Admin\User\DeleteController as AdminUserDeleteController;
-use App\Http\Controllers\Admin\User\EditController as AdminUserEditController;
-use App\Http\Controllers\Admin\User\IndexController as AdminUserIndexController;
-use App\Http\Controllers\Admin\User\ShowController as AdminUserShowController;
-use App\Http\Controllers\Admin\User\StoreController as AdminUserStoreController;
-use App\Http\Controllers\Admin\User\UpdateController as AdminUserUpdateController;
 use App\Http\Controllers\Category\IndexController as CategoryIndexController;
 use App\Http\Controllers\Category\Post\IndexController as CategoryPostIndexController;
 use App\Http\Controllers\ContactsController;
@@ -111,44 +87,12 @@ Route::prefix('personal')->middleware(['auth'])->group(function () {
     });
 });
 
-Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function () {
     Route::prefix('main')->group(function () {
-        Route::get('/', AdminMainIndexController::class)->name('admin.main.index');
+        Route::get('/', AdminMainIndexController::class)->name('main.index');
     });
-    Route::prefix('category')->group(function () {
-        Route::get('/', AdminCategoryIndexController::class)->name('admin.category.index');
-        Route::get('/create', AdminCategoryCreateController::class)->name('admin.category.create');
-        Route::post('/', AdminCategoryStoreController::class)->name('admin.category.store');
-        Route::get('/{category}', AdminCategoryShowController::class)->name('admin.category.show');
-        Route::get('/{category}/edit', AdminCategoryEditController::class)->name('admin.category.edit');
-        Route::patch('/{category}', AdminCategoryUpdateController::class)->name('admin.category.update');
-        Route::delete('/{category}', AdminCategoryDeleteController::class)->name('admin.category.delete');
-    });
-    Route::prefix('tag')->group(function () {
-        Route::get('/', AdminTagIndexController::class)->name('admin.tag.index');
-        Route::get('/create', AdminTagCreateController::class)->name('admin.tag.create');
-        Route::post('/', AdminTagStoreController::class)->name('admin.tag.store');
-        Route::get('/{tag}', AdminTagShowController::class)->name('admin.tag.show');
-        Route::get('/{tag}/edit', AdminTagEditController::class)->name('admin.tag.edit');
-        Route::patch('/{tag}', AdminTagUpdateController::class)->name('admin.tag.update');
-        Route::delete('/{tag}', AdminTagDeleteController::class)->name('admin.tag.delete');
-    });
-    Route::prefix('post')->group(function () {
-        Route::get('/', AdminPostIndexController::class)->name('admin.post.index');
-        Route::get('/create', AdminPostCreateController::class)->name('admin.post.create');
-        Route::post('/', AdminPostStoreController::class)->name('admin.post.store');
-        Route::get('/{post}', AdminPostShowController::class)->name('admin.post.show');
-        Route::get('/{post}/edit', AdminPostEditController::class)->name('admin.post.edit');
-        Route::patch('/{post}', AdminPostUpdateController::class)->name('admin.post.update');
-        Route::delete('/{post}', AdminPostDeleteController::class)->name('admin.post.delete');
-    });
-    Route::prefix('user')->group(function () {
-        Route::get('/', AdminUserIndexController::class)->name('admin.user.index');
-        Route::get('/create', AdminUserCreateController::class)->name('admin.user.create');
-        Route::post('/', AdminUserStoreController::class)->name('admin.user.store');
-        Route::get('/{user}', AdminUserShowController::class)->name('admin.user.show');
-        Route::get('/{user}/edit', AdminUserEditController::class)->name('admin.user.edit');
-        Route::patch('/{user}', AdminUserUpdateController::class)->name('admin.user.update');
-        Route::delete('/{user}', AdminUserDeleteController::class)->name('admin.user.delete');
-    });
+    Route::resource('category', AdminCategoryController::class);
+    Route::resource('tag', AdminTagController::class);
+    Route::resource('post', AdminPostController::class);
+    Route::resource('user', AdminUserController::class);
 });

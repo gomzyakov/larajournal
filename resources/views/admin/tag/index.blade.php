@@ -43,15 +43,15 @@
                                         <tr>
                                             <td>{{ $tag->id }}</td>
                                             <td>{{ $tag->title }}</td>
-                                            <td><a href="{{ route('admin.tag.show', $tag->id) }}"><i class="far fa-eye"></i></a></td>
-                                            <td><a href="{{ route('admin.tag.edit', $tag->id) }}" class="text-success"><i class="fas fa-edit"></i></a></td>
+                                            <td><a href="{{ route('admin.tag.show', $tag->id) }}">Info</a></td>
+                                            <td><a href="{{ route('admin.tag.edit', $tag->id) }}" class="text-success">Edit</a></td>
                                             <td>
-                                                <form action="{{ route('admin.tag.delete', $tag->id)}}"
+                                                <form action="{{ route('admin.tag.destroy', $tag->id)}}"
                                                       method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="border-0 bg-transparent">
-                                                        <i class="far fa-trash-alt text-danger"></i>
+                                                        Delete
                                                     </button>
                                                 </form>
                                             </td>

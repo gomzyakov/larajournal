@@ -23,6 +23,10 @@ class PostService
                 $tagIds = $data['tag_ids'];
                 unset($data['tag_ids']);
             }
+            if (isset($data['category_id'])) {
+                $categoryId = $data['category_id'];
+                unset($data['category_id']);
+            }
             if (isset($data['preview_image'])) {
                 $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
             }
@@ -36,6 +40,9 @@ class PostService
 
             if (isset($tagIds)) {
                 $post->tags()->attach($tagIds);
+            }
+            if (isset($categoryId)) {
+                $post->categories()->attach($categoryId);
             }
             DB::commit();
         } catch (Exception) {

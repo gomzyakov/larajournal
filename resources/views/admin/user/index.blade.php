@@ -43,15 +43,15 @@
                                         <tr>
                                             <td>{{ $user->id }}</td>
                                             <td>{{ $user->name }}</td>
-                                            <td><a href="{{ route('admin.user.show', $user->id) }}"><i class="far fa-eye"></i></a></td>
-                                            <td><a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i class="fas fa-edit"></i></a></td>
+                                            <td><a href="{{ route('admin.user.show', $user->id) }}">Info</a></td>
+                                            <td><a href="{{ route('admin.user.edit', $user->id) }}" class="text-success">Edit</a></td>
                                             <td>
-                                                <form action="{{ route('admin.user.delete', $user->id)}}"
+                                                <form action="{{ route('admin.user.destroy', $user->id)}}"
                                                       method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="border-0 bg-transparent">
-                                                        <i class="far fa-trash-alt text-danger"></i>
+                                                        Delete
                                                     </button>
                                                 </form>
                                             </td>
