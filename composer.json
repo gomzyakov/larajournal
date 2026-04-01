@@ -10,7 +10,7 @@
         "ext-gd": "*",
         "gomzyakov/image-placeholder": "^1.0",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1",
+        "laravel/tinker": "^3.0.0",
         "laravel/ui": "^4.5",
         "spatie/laravel-permission": "^6.4"
     },
