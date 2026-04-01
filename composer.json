@@ -12,7 +12,7 @@
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.5",
-        "spatie/laravel-permission": "^6.4"
+        "spatie/laravel-permission": "^7.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23.1",
